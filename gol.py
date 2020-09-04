@@ -3,11 +3,11 @@ import numpy as np
 from matplotlib import animation
 import random
 
-cells = np.array([[random.randint(0, 0) for _ in range(16)] for _ in range(16)])
+cells = np.array([[random.randint(0, 1) for _ in range(16)] for _ in range(16)])
 
-cells[6][6] = 1
-cells[7][6] = 1
-cells[8][6] = 1
+#cells[6][6] = 1
+#cells[7][6] = 1
+#cells[8][6] = 1
 
 fig = plt.figure()
 ax = plt.axes()
@@ -55,6 +55,6 @@ def checkRules(i, j, cells):
     return cell
 
 
-anim = animation.FuncAnimation(fig, iterate, interval=100, frames=200, blit=True)
+anim = animation.FuncAnimation(fig, iterate, interval=100, frames=None, blit=True)
 #iterate(1)
 plt.show()
